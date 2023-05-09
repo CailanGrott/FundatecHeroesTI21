@@ -4,56 +4,69 @@ import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.activity.viewModels
+import androidx.core.view.isVisible
+import androidx.databinding.BindingAdapter
 import br.com.fundatec.core.visible
+import br.com.fundatec.fundatecheroesti21.databinding.ActivityMainBinding
 import br.com.fundatec.fundatecheroesti21.presentation.MainViewModel
+import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
+
+    private val viewModel: MainViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = this
+        setContentView(binding.root)
 
-        val viewModel = MainViewModel()
+        val image = findViewById<ImageView>(R.id.image)
+        Glide
+            .with(image.context)
+            .load("https://e1.pngegg.com/pngimages/889/193/png-clipart-goku-son-goku-thumbnail.png")
+            .into(image)
 
-        val container = findViewById<ConstraintLayout>(R.id.container)
-        val etName = findViewById<EditText>(R.id.et_name)
-        val btOk = findViewById<Button>(R.id.bt_ok)
-        val btClear = findViewById<Button>(R.id.bt_clear)
-        val tvHello = findViewById<TextView>(R.id.tv_hello)
-
-        btOk.setOnClickListener {
-            viewModel.validateName(etName.text)
+        binding.btOk.setOnClickListener {
+            viewModel.validateName(binding.etName.text)
         }
-
-        btClear.setOnClickListener {
+        // Realizar o click através do xml utilizando viewbinging
+        binding.btClear.setOnClickListener {
             viewModel.clear()
         }
-
-        viewModel.publicName.observe(this) { name ->
-            tvHello.text = getString(R.string.hello, name)
+        // Mudar a visibilidade utilizando viewbinding, ou seja utilizando as variaveis direto no xml
+        viewModel.visibility.observe(this@MainActivity) { visibility ->
+            binding.tvHello.visibility = visibility
+            binding.tvHello.visible()
         }
 
-        viewModel.visibility.observe(this) { visibility ->
-            tvHello.visibility = visibility
-            tvHello.visible()
-        }
-
-        viewModel.showToast.observe(this) {
-            Snackbar.make(container, "Preencha os campos!!!", Snackbar.LENGTH_LONG).apply {
-                anchorView = etName
+        viewModel.showToast.observe(this@MainActivity) {
+            Snackbar.make(binding.container, "Preencha os campos!!!", Snackbar.LENGTH_LONG).apply {
+                anchorView = binding.etName
             }.setAction("Desfazer") {
                 showToast("Preencha os campos!!!")
             }.show()
 
         }
     }
+}
+
+@BindingAdapter(value = ["app:customVisibility"], requireAll = false)
+fun View.setVisibility(visibility: Boolean) {
+    this.isVisible = visibility
+}
+
+@BindingAdapter(value = ["app:customText"], requireAll = false)
+fun TextView.setText(text: String?) {
+    this.text = context.getString(R.string.hello, text)
 }
 
 fun Context.showToast(message: String, length: Int = Toast.LENGTH_LONG) {
