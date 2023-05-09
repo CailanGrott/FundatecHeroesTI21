@@ -5,4 +5,9 @@
     <string name="hello">Oi, %s</string>
     <string name="clear">Limpar</string>
     <string name="ok">Ok</string>
+    <string name="logo_fundatec">logo Escola Profissional Fundatec</string>
+    <string name="email">Email</string>
+    <string name="senha">Senha</string>
+    <string name="logar">Login</string>
+    <string name="novo_por_aqui">Novo por aqui?</string>
 </resources>
