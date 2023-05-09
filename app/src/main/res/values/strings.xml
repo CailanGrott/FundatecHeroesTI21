@@ -5,15 +5,4 @@
     <string name="hello">Oi, %s</string>
     <string name="clear">Limpar</string>
     <string name="ok">Ok</string>
-    <string name="logo_fundatec">logo Escola Profissional Fundatec</string>
-    <string name="email">Email</string>
-    <string name="senha">Senha</string>
-    <string name="logar">Login</string>
-    <string name="novo_por_aqui">Novo por aqui?</string>
-    <string name="login_error_message">E-mail ou senha estão incorretos!</string>
-    <string name="login_email_error_message">E-mail inválido</string>
-    <string name="login_password_error_message">Senha inválida</string>
-    <string name="home">Home</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
