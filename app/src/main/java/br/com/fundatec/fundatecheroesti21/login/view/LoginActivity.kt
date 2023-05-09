@@ -11,6 +11,7 @@ import br.com.fundatec.fundatecheroesti21.R
 import br.com.fundatec.fundatecheroesti21.databinding.ActivityLoginBinding
 import br.com.fundatec.fundatecheroesti21.login.presentation.LoginViewModel
 import br.com.fundatec.fundatecheroesti21.login.presentation.model.LoginViewState
+import br.com.fundatec.fundatecheroesti21.profile.view.ProfileActivity
 import com.google.android.material.snackbar.Snackbar
 
 class LoginActivity : AppCompatActivity() {
@@ -30,6 +31,10 @@ class LoginActivity : AppCompatActivity() {
                 password = binding.pwd.text.toString(),
                 email = binding.email.text.toString(),
             )
+        }
+
+        binding.tvNewHere.setOnClickListener{
+            showProfile()
         }
     }
 
@@ -67,6 +72,13 @@ class LoginActivity : AppCompatActivity() {
     private fun showHome() {
         binding.pbLoading.hide()
         val intent = Intent(this@LoginActivity, HomeActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
+
+    private fun showProfile(){
+        binding.pbLoading.hide()
+        val intent = Intent(this@LoginActivity, ProfileActivity::class.java)
         startActivity(intent)
         finish()
     }
