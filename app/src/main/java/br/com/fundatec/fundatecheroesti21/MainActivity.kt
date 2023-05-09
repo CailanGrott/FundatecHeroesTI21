@@ -10,7 +10,7 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.view.isVisible
 import androidx.databinding.BindingAdapter
-import br.com.fundatec.core.visible
+import br.com.fundatec.core.show
 import br.com.fundatec.fundatecheroesti21.databinding.ActivityMainBinding
 import br.com.fundatec.fundatecheroesti21.presentation.MainViewModel
 import com.bumptech.glide.Glide
@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         // Mudar a visibilidade utilizando viewbinding, ou seja utilizando as variaveis direto no xml
         viewModel.visibility.observe(this@MainActivity) { visibility ->
             binding.tvHello.visibility = visibility
-            binding.tvHello.visible()
+            binding.tvHello.show()
         }
 
         viewModel.showToast.observe(this@MainActivity) {
