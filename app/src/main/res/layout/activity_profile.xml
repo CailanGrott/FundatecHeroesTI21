@@ -13,12 +13,34 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/logo_fundatec"
-            android:src="@drawable/fundatec_logo"
             android:importantForAccessibility="no"
+            android:src="@drawable/fundatec_logo"
             app:layout_constraintBottom_toTopOf="@id/ti_email"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ti_nome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            app:layout_constraintBottom_toTopOf="@id/ti_email"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed">
+
+            <EditText
+                android:id="@+id/nome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="100dp"
+                android:hint="@string/name"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/ti_email"
@@ -28,7 +50,7 @@
             app:layout_constraintBottom_toTopOf="@id/ti_pwd"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ti_nome"
             app:layout_constraintVertical_chainStyle="packed">
 
             <EditText
@@ -46,7 +68,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="18dp"
-            app:layout_constraintBottom_toTopOf="@id/bt_login"
+            app:layout_constraintBottom_toTopOf="@id/bt_register"
             app:layout_constraintTop_toBottomOf="@id/ti_email"
             app:passwordToggleEnabled="true">
 
@@ -57,12 +79,13 @@
                 android:layout_marginHorizontal="40dp"
                 android:hint="@string/senha"
                 android:imeOptions="actionDone"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:maxLength="16" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/bt_login"
+            android:id="@+id/bt_register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="40dp"

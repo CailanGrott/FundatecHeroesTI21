@@ -24,6 +24,14 @@ class ProfileActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         initializeObserver()
+
+        binding.btRegister.setOnClickListener {
+            viewModel.validateInputs(
+                password = binding.pwd.text.toString(),
+                email = binding.email.text.toString(),
+                name = binding.nome.text.toString(),
+            )
+        }
     }
 
     private fun initializeObserver() {
@@ -34,6 +42,7 @@ class ProfileActivity : AppCompatActivity() {
                 ProfileViewState.ShowEmailErrorMessage -> showEmailError()
                 ProfileViewState.ShowPasswordErrorMessage -> showPasswordError()
                 ProfileViewState.ShowLoading -> showLoading()
+                ProfileViewState.ShowNameError -> showNameError()
             }
         }
     }
@@ -42,14 +51,19 @@ class ProfileActivity : AppCompatActivity() {
         binding.pbLoading.show()
     }
 
+    private fun showNameError() {
+        binding.pbLoading.hide()
+        binding.nome.error = getString(R.string.register_name_error_message)
+    }
+
     private fun showEmailError() {
         binding.pbLoading.hide()
-        binding.email.error = getString(R.string.login_email_error_message)
+        binding.email.error = getString(R.string.register_email_error_message)
     }
 
     private fun showPasswordError() {
         binding.pbLoading.hide()
-        binding.pwd.error = getString(R.string.login_password_error_message)
+        binding.pwd.error = getString(R.string.register_pdw_error_message)
     }
 
     private fun showSnackError() {
