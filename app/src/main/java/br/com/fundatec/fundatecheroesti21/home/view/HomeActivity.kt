@@ -1,8 +1,12 @@
 package br.com.fundatec.fundatecheroesti21.home.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import br.com.fundatec.core.hide
 import br.com.fundatec.fundatecheroesti21.databinding.ActivityHomeBinding
+import br.com.fundatec.fundatecheroesti21.heroRegister.view.HeroRegisterActivity
+import br.com.fundatec.fundatecheroesti21.profile.view.ProfileActivity
 
 class HomeActivity : AppCompatActivity() {
 
@@ -16,6 +20,16 @@ class HomeActivity : AppCompatActivity() {
         val adapter = HomeViewPager(supportFragmentManager)
         binding.homeViewPager.adapter = adapter
         binding.homeTabLayout.setupWithViewPager(binding.homeViewPager)
+
+        binding.btLogin.setOnClickListener {
+            showHeroesRegister()
+        }
+    }
+
+    private fun showHeroesRegister() {
+        val intent = Intent(this@HomeActivity, HeroRegisterActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }
 
