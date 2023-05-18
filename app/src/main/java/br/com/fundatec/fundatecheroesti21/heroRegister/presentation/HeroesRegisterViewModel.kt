@@ -38,7 +38,7 @@ class HeroesRegisterViewModel : ViewModel() {
             return
         }
 
-        if (age.isNullOrBlank()) {
+        if (age.isNullOrBlank() || age.equals("0")) {
             viewState.value = HeroRegisterViewState.ShowAgeError
             return
         }
