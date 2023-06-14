@@ -21,6 +21,7 @@
     <string name="logar">Login</string>
     <string name="novo_por_aqui">Novo por aqui?</string>
     <string name="login_error_message">E-mail ou senha estão incorretos!</string>
+    <string name="login_error_message_hero_register">Insira todos os dados para continuar</string>
     <string name="login_email_error_message">E-mail inválido</string>
     <string name="login_password_error_message">Senha inválida</string>
     <string name="register_name_error_message">Nome inválido</string>
