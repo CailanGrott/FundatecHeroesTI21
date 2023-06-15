@@ -75,7 +75,7 @@ class HeroRegisterActivity : AppCompatActivity() {
 
     private fun showSnackError() {
         binding.pbLoading.hide()
-        Snackbar.make(binding.root, R.string.login_error_message, Snackbar.LENGTH_LONG).show()
+        Snackbar.make(binding.root, R.string.login_error_message_hero_register, Snackbar.LENGTH_LONG).show()
     }
 
     private fun showDescriptionError() {
