@@ -6,14 +6,20 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/cardview_shadow_start_color"
         tools:context=".character.view.CharacterFragment">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:itemCount="20"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            tools:itemCount="10"
+            app:spanCount="2"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginVertical="20dp"
+            tools:layout_editor_absoluteX="-47dp"
+            tools:layout_editor_absoluteY="-249dp"
             tools:listitem="@layout/character_list_item" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
