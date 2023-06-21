@@ -10,7 +10,7 @@ class HeroesRegisterViewModel : ViewModel() {
     private val viewState = MutableLiveData<HeroRegisterViewState>()
     val state: LiveData<HeroRegisterViewState> = viewState
     fun validateInputs(name: String?, description: String?, age: String?, birth_date: String?) {
-        var patternAge = Pattern.compile("[0-9]")
+        var patternAge = Pattern.compile("^(?!0)\\d+$")
         var matcherAge = patternAge.matcher(age)
 
         var patternBirthDate = Pattern.compile("\\d{2}[-\\/\\.]\\d{2}[-\\/\\.]\\d{4}|\\d{8}")
