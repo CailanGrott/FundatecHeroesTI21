@@ -1,4 +1,4 @@
-package br.com.fundatec.fundatecheroesti21.login.data.repository
+package br.com.fundatec.fundatecheroesti21.login.data.service
 
 import br.com.fundatec.fundatecheroesti21.login.data.remote.LoginResponse
 import retrofit2.Response
