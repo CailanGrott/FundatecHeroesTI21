@@ -1,12 +1,12 @@
 <resources>
     <string-array name="heroes">
         <item>Selecione</item>
-        <item>Herói</item>
-        <item>Vilão</item>
+        <item>HERO</item>
+        <item>VILLAIN</item>
     </string-array>
     <string-array name="universe">
         <item>Selecione</item>
-        <item>Marvel</item>
+        <item>MARVEL</item>
         <item>DC</item>
     </string-array>
     <string name="app_name">Fundatec Heroes TI21</string>
@@ -21,22 +21,27 @@
     <string name="logar">Login</string>
     <string name="novo_por_aqui">Novo por aqui?</string>
     <string name="login_error_message">E-mail ou senha estão incorretos!</string>
-    <string name="login_error_message_hero_register">Insira todos os dados para continuar</string>
+    <string name="login_error2_message">Complete todos os dados para seguir adiante!</string>
     <string name="login_email_error_message">E-mail inválido</string>
     <string name="login_password_error_message">Senha inválida</string>
     <string name="register_name_error_message">Nome inválido</string>
-    <string name="register_description_error_message">Descrição inválido</string>
     <string name="register_age_error_message">Idade inválida</string>
-    <string name="register_birthDate_error_message">Data inválida</string>
+    <string name="register_birthdate_error_message">Data inválida</string>
+    <string name="register_description_error_message">Descrição inválida, não pode estar vazia!</string>
     <string name="register_email_error_message">E-mail inválido</string>
     <string name="register_pdw_error_message">Senha inválida</string>
     <string name="home">Home</string>
+    <string name="register_user_succes">Usuário criado com sucesso!</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="register">Register</string>
-    <string name="name">Name</string>
-    <string name="description">Description</string>
-    <string name="age">Age</string>
-    <string name="birth_date">Birth Date</string>
-    <string name="url_image">URL image</string>
+    <string name="name">Nome</string>
+    <string name="descricao">Descrição</string>
+    <string name="idade">Idade</string>
+    <string name="data">Data</string>
+    <string name="insira_a_url_da_imagem">Insira a URL da imagem</string>
+    <string name="adicione">Adicione</string>
+    <string name="new_character">New Character</string>
+    <string name="image_error_message">image_error_message\n</string>
 </resources>
+
