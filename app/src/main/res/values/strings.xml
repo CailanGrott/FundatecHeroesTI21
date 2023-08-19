@@ -1,15 +1,15 @@
 <resources>
     <string-array name="heroes">
         <item>Selecione</item>
-        <item>HERO</item>
-        <item>VILLAIN</item>
+        <item>Héroi</item>
+        <item>Vilão</item>
     </string-array>
     <string-array name="universe">
         <item>Selecione</item>
-        <item>MARVEL</item>
+        <item>Marvel</item>
         <item>DC</item>
     </string-array>
-    <string name="app_name">Fundatec Heroes TI21</string>
+    <string name="app_name">Fundatec Heroes</string>
     <string name="what_your_name">Qual o seu nome?</string>
     <string name="digite_o_seu_nome">Digite o seu nome</string>
     <string name="hello">Oi, %s</string>
@@ -41,7 +41,7 @@
     <string name="data">Data</string>
     <string name="insira_a_url_da_imagem">Insira a URL da imagem</string>
     <string name="adicione">Adicione</string>
-    <string name="new_character">New Character</string>
-    <string name="image_error_message">image_error_message\n</string>
+    <string name="new_character">Novo Personagem</string>
+    <string name="image_error_message">Imagem inválida</string>
 </resources>
 
