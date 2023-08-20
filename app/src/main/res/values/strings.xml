@@ -1,8 +1,8 @@
 <resources>
     <string-array name="heroes">
         <item>Selecione</item>
-        <item>Héroi</item>
-        <item>Vilão</item>
+        <item>Hero</item>
+        <item>Villain</item>
     </string-array>
     <string-array name="universe">
         <item>Selecione</item>

@@ -51,7 +51,6 @@ class CharacterRepository {
 
     suspend fun getCharacters(): List<CharacterModel> {
         return withContext(Dispatchers.IO) {
-            Log.e("Log" , database.userDao().getId().toString())
             val response: Response<List<CharacterResponse>> =
                 client.getCharacter(database.userDao().getId())
 
