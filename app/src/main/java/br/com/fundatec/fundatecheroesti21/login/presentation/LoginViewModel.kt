@@ -5,12 +5,14 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import br.com.fundatec.fundatecheroesti21.login.domain.LoginUseCase
+import br.com.fundatec.fundatecheroesti21.login.domain.UserUseCase
 import br.com.fundatec.fundatecheroesti21.login.presentation.model.LoginViewState
 import kotlinx.coroutines.launch
 import java.util.regex.Pattern
 
 class LoginViewModel : ViewModel() {
-    private val usecase by lazy { LoginUseCase() }
+
+    private val useCase by lazy { LoginUseCase() }
     private val viewState = MutableLiveData<LoginViewState>()
     val state: LiveData<LoginViewState> = viewState
 
@@ -43,9 +45,8 @@ class LoginViewModel : ViewModel() {
     }
 
     private fun fetchLogin(email: String, password: String) {
-        viewState.value = LoginViewState.ShowHomeScreen
         viewModelScope.launch {
-            val isSuccess = usecase.login(email = email, password = password)
+            val isSuccess = useCase.login(email = email, password = password)
             if (isSuccess) {
                 viewState.value = LoginViewState.ShowHomeScreen
             } else {
